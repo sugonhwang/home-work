@@ -1,60 +1,59 @@
+/* 전체 페이지 padding, margin 초기화 */
+
 body {
+  padding: 0;
   margin: 0;
-  padding: 0;
-  background-color: #fff;
 }
-
-.img-set {
-  border: 1px solid #000;
+/* 전체 틀  */
+.profile-img-section {
+  border: 1px solid gray;
+  /* height: 500px; */
   padding: 100px;
-  margin: auto;
-  margin-top: 100px;
-  width: 396px;
-  height: 195px;
 }
 
-.img-list {
-  padding: 0;
-}
 
-.profile-box {
-  list-style: none;
+/* 이미지들 포지션 속성 및 디스플레이 속성 변경 : 선형화 되어있는 리스트를 인라인처럼 바꿔야하므로 list의 class에 display 속성 적용*/
+.profile-img-list{
   position: relative;
-  padding: 10px;
-  width: 64px;
-  height: 64px;
+  list-style: none;
   display: inline-block;
-}
-
-.profile {
-  border-radius: 50%;
   width: 64px;
   height: 64px;
-  margin: auto;
+  padding: 20px;
 }
 
-.offline {
+/* 이미지 프레임 원형으로 바꿈 : border-radius 속성을 주지 않으면 기본적으로 사각형으로 이미지가 보여지기 때문에 img 요소에 border-radius 속성 적용 */
+.profile {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+/* 상태 정보를 나타내기 위해 offline/online 클래스를 각 이미지 li 요소 안에 선언하고 과제 예시에 맞는 이미지마다 offline/online 클래스를 선언한 후 css 적용 */
+.offline { 
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  left: 50px;
   display: inline-block;
   box-sizing: border-box;
+  top: 40px;
   width: 16px;
   height: 16px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background-color:#dbdbdb;
+  border: 1px solid #FFF;
+  border-radius: 100%;
+  background-color: #DBDBDB;
 }
 
 .online {
   position: absolute;
+  top: 40px;
   bottom: 10px;
-  right: 10px;
+  left: 50px;
   display: inline-block;
   box-sizing: border-box;
   width: 16px;
   height: 16px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background-color: #4cfe88
+  border: 1px solid #FFF;
+  border-radius: 100%;
+  background-color: #4cfe88;
 }
