@@ -1,9 +1,11 @@
 /* 전체 페이지 padding, margin 초기화 */
 
-body {
+body *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
+
 /* 전체 틀  */
 .profile-img-section {
   border: 1px solid gray;
@@ -11,15 +13,14 @@ body {
   padding: 100px;
 }
 
-
 /* 이미지들 포지션 속성 및 디스플레이 속성 변경 : 선형화 되어있는 리스트를 인라인처럼 바꿔야하므로 list의 class에 display 속성 적용*/
 .profile-img-list{
   position: relative;
   list-style: none;
   display: inline-block;
-  width: 64px;
-  height: 64px;
-  padding: 20px;
+  /* width: 64px;
+  height: 64px; */
+  margin: 10px;
 }
 
 /* 이미지 프레임 원형으로 바꿈 : border-radius 속성을 주지 않으면 기본적으로 사각형으로 이미지가 보여지기 때문에 img 요소에 border-radius 속성 적용 */
@@ -32,28 +33,20 @@ body {
 /* 상태 정보를 나타내기 위해 offline/online 클래스를 각 이미지 li 요소 안에 선언하고 과제 예시에 맞는 이미지마다 offline/online 클래스를 선언한 후 css 적용 */
 .offline { 
   position: absolute;
-  bottom: 10px;
-  left: 50px;
-  display: inline-block;
-  box-sizing: border-box;
-  top: 40px;
+  bottom: 5px;
+  right: 0px;
   width: 16px;
   height: 16px;
+  display: inline-block;
+  box-sizing: border-box;
   border: 1px solid #FFF;
   border-radius: 100%;
   background-color: #DBDBDB;
+
 }
 
-.online {
-  position: absolute;
-  top: 40px;
-  bottom: 10px;
-  left: 50px;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #FFF;
-  border-radius: 100%;
+/* online class는 기본적으로 offline class의 설정값을 기본적으로 가져가면서 색상만 다르게 가져가도록 설정 */
+.offline.online{
   background-color: #4cfe88;
+
 }
