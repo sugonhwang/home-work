@@ -1,6 +1,6 @@
 /* 전체 페이지 padding, margin 초기화 */
 
-body *{
+body * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,7 +14,7 @@ body *{
 }
 
 /* 이미지들 포지션 속성 및 디스플레이 속성 변경 : 선형화 되어있는 리스트를 인라인처럼 바꿔야하므로 list의 class에 display 속성 적용*/
-.profile-img-list{
+.profile-img-list {
   position: relative;
   list-style: none;
   display: inline-block;
@@ -31,7 +31,7 @@ body *{
 }
 
 /* 상태 정보를 나타내기 위해 offline/online 클래스를 각 이미지 li 요소 안에 선언하고 과제 예시에 맞는 이미지마다 offline/online 클래스를 선언한 후 css 적용 */
-.offline { 
+.offline {
   position: absolute;
   bottom: 5px;
   right: 0px;
@@ -39,14 +39,12 @@ body *{
   height: 16px;
   display: inline-block;
   box-sizing: border-box;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   border-radius: 100%;
-  background-color: #DBDBDB;
-
+  background-color: #dbdbdb;
 }
 
 /* online class는 기본적으로 offline class의 설정값을 기본적으로 가져가면서 색상만 다르게 가져가도록 설정 */
-.offline.online{
+.offline.online {
   background-color: #4cfe88;
-
 }
