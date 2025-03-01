@@ -1,0 +1,128 @@
+:root {
+  --primary-color: #03cf5d;
+  --gray-login-line: #dadada;
+  --gray-id-pw-color: #999999;
+  --white-login-btn-color: #fff;
+  --primary-font-size16: 1rem;
+  --primary-font-size14: 0.875rem;
+  --primary-font-color: #121212;
+  --inputform-bg-color: #e9f0fd;
+}
+
+body * {
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo";
+}
+
+/* sr-only를 선언한 이유: 스크린 리더가 불필요한 정보를 읽지 않도록 아래 코드를 통해 적용  */
+.sr-only {
+  position: absolute;
+  /* 온라인. 오프라인 글자를 너비/높이 1px로 지정 -> 1px안에 글자가 안들어가므로 overflow 됨 */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden; /* 오버플로우된 글자(온/오프라인)을 보이지 않게 설정 */
+  clip-path: inset(
+    50%
+  ); /* absolute과 같이 사용해야 하며 좌표값만큼 이미지를 잘라냄*/
+  white-space: nowrap; /* 줄바꿈을 위한 처리 : white-space: nowrap -> wrap(줄바꿈)을 no(안하겠다) */
+  border: 0;
+}
+
+.naver-page {
+  display: block;
+  /* 로고 컴포넌트 스타일 */
+  header {
+    width: 100%; /* 반응형을 구현하기 위해 크기를 % 단위로 설정 */
+    margin-block-start: 6.25rem;
+
+    img {
+      display: block;
+      inline-size: 14.375rem;
+      margin: 0.625rem auto;
+    }
+
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8125rem;
+  }
+
+  /* 로그인 폼 컴포넌트 스타일 */
+  .login-wrapper {
+    display: block;
+    /* flex-flow: column nowrap; */
+    width: 100%;
+
+    .loginform {
+      margin: 1.875rem 1.25rem;
+      label {
+        position: absolute;
+        clip-path: inset(50%);
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      /* 아이디+패스워드 폼 크기 여백 폰트 컬러 테두리 색상 지정  */
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        margin-block-start: 1.25rem;
+        padding: 1.25rem;
+        border: 1px solid var(--gray-login-line);
+
+        &:focus {
+          background: var(--inputform-bg-color);
+          border-color: var(--primary-color);
+          outline: none;
+        }
+      }
+
+      /* 로그인 버튼 */
+      .btn-login {
+        width: 100%;
+        padding: 1.25rem;
+        margin-block-start: 1.25rem;
+        background: var(--primary-color);
+        color: var(--white-login-btn-color);
+        border: 0;
+      }
+    }
+  }
+}
+
+/* 로그인 상태 유지 컴포넌트 */
+.login-stay {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(./unchecked.svg) no-repeat;
+
+  &:checked {
+    background: url(./checked.svg) no-repeat;
+  }
+}
+
+/* IP보안 버튼 컴포넌트 */
+/* ip_security.html 페이지 링크 컴포넌트 */
+.ip-security-btn {
+  a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+  }
+}
+
+/* IP보안 기능 on/off  */
+.ip-security {
+  appearance: none;
+  /* background: url()로 불러온 이미지 크기만큼 이미지의 크기 및 높이 지정 */
+  width: 1.6875rem;
+  height: 0.75rem;
+  /* IP 보안 기능이 기본적으로 off인 상태에서 가상 선택자(&:checked)와 그안에 이미지를 추가하여 마치 클릭했을 때 
+     상태(off -> on / on -> off)가 변경되는것처럼 스타일링  */
+  background: url(./ip-security-off.svg) no-repeat;
+
+  &:checked {
+    background: url(./ip-security-on.svg) no-repeat;
+  }
+}
