@@ -35,7 +35,9 @@
             name="userID"
             placeholder="아이디(이메일)"
             required
+            title="아이디는 이메일을 입력해주세요"
           />
+          <span class="error-msg">아이디는 이메일을 입력해주세요</span>
           <label for="userPwd">비밀번호</label>
           <input
             type="password"
@@ -43,7 +45,9 @@
             placeholder="비밀번호"
             required
             minlength="10"
+            title="비밀번호는 10자리 이상 입력해주세요"
           />
+          <span class="error-msg">비밀번호는 10자리 이상 입력해주세요</span>
           <input type="submit" value="로그인" class="btn-login" />
         </form>
       </div>
